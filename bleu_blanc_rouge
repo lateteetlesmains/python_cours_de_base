@@ -1,0 +1,26 @@
+import neopixel
+import machine
+from machine import TouchPad, Pin
+from time import sleep
+from neopixel import NeoPixel
+
+PIN = 5
+
+pixels = neopixel.NeoPixel(machine.Pin(5), 7)   
+
+for i in range(7):
+        pixels[i] = (0, 0, 255)
+        pixels.write()
+sleep(0.5)
+for i in range(7):
+        pixels[i] = (255, 255, 255)
+        pixels.write()
+sleep(0.5)
+for i in range(7): 
+        pixels[i] = (255, 0, 0)
+        pixels.write()
+sleep(0.5)            
+for i in range(7):  # set all 7 pixels to red
+        pixels[i] = (0, 0, 0)
+        pixels.write()
+sleep(0.5)
